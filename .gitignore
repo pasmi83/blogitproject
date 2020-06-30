@@ -1,0 +1,14 @@
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+/blogitproject/media/*
+/blogitproject/static/*
+/blogit_venv
+.DS_Store
+.vscode
+*.pid
+*.db
+*.rdb
+*.sqlite3
