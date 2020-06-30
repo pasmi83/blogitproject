@@ -126,12 +126,12 @@
   <ItemGroup>
     <Interpreter Include="..\blogit_env\">
       <Id>blogit_env</Id>
-      <Version>3.7</Version>
-      <Description>blogit_env (Python 3.7 (64-bit))</Description>
+      <Version>3.8</Version>
+      <Description>blogit_env (Python 3.8 (32-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X64</Architecture>
+      <Architecture>X86</Architecture>
     </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
