@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area breadcam_bg_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>Login</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+    <form class="container-fluid m-5" method="post">
+        {% csrf_token %}
+        <div class="col-3 my-auto mx-auto">
+            <label class="col-form-label">Никнейм</label>
+            <input type="text"  class="single-input m-2" name="username" required>
+            <label class="col-form-label">Пароль</label>
+            <input type="password" class="single-input mb-5" placeholfer ="Password" name="password" required>
+            <input type="submit" value="Войти" class="genric-btn info-border col-12">
+            <div class="text-center m-2">
+                <span>ИЛИ</span>
+            </div>
+            <a href="#" class="genric-btn warning-border col-12">Зарегистрироваться</a>
+        </div>
+        
+
+    </form>
+{%endblock content%}

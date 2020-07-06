@@ -1,0 +1,47 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+    <!-- bradcam_area  -->
+    <div class="bradcam_area breadcam_bg_2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>register</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ bradcam_area  -->
+    <form class="container-fluid m-5" method="post">
+        <div class="col-3 my-auto mx-auto">
+            
+            <label class="col-form-label">Никнейм</label>
+            <input type="text"  class="single-input m-2" name="username" required>
+
+            <label class="col-form-label">Имя</label>
+            <input type="text"  class="single-input m-2" name="first_name" required>
+
+            <label class="col-form-label">Фамилия</label>
+            <input type="text"  class="single-input m-2" name="last_name" required>
+
+            <label class="col-form-label">Email</label>
+            <input type="email"  class="single-input m-2" name="email" required>
+
+            <label class="col-form-label">Password</label>
+            <input type="password"  class="single-input m-2" name="password" required>
+            
+            <label class="col-form-label">Повторите Password</label>
+            <input type="password"  class="single-input m-2" name="password1" required>
+
+            <input type="submit" value="Зарегисрироваться" class="genric-btn info-border mt-5 col-12">
+            <div class="text-center m-2">
+                <span>ИЛИ</span>
+            </div>
+            <a href="#" class="genric-btn warning-border col-12">Отказаться</a>
+        </div>
+        
+
+    </form>
+{%endblock content%}
