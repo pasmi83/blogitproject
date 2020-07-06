@@ -15,6 +15,7 @@
     </div>
     <!--/ bradcam_area  -->
     <form class="container-fluid m-5" method="post">
+        {% csrf_token %}
         <div class="col-3 my-auto mx-auto">
             
             <label class="col-form-label">Никнейм</label>
@@ -39,7 +40,7 @@
             <div class="text-center m-2">
                 <span>ИЛИ</span>
             </div>
-            <a href="#" class="genric-btn warning-border col-12">Отказаться</a>
+            <a href="{%url 'pages:index'%}" class="genric-btn warning-border col-12">Отказаться</a>
         </div>
         
 
