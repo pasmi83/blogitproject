@@ -26,4 +26,5 @@ urlpatterns = [
     # Uncomment the next line to enable the admin:
     path('admin/', admin.site.urls),
     path('',include('pages.urls',namespace = 'pages')),
+    path('accounts/',include('accounts.urls', namespace = 'accounts')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

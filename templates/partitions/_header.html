@@ -1,0 +1,53 @@
+{%load static%}
+<!-- header-start -->
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid">
+                <div class="header_bottom_border">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="{%static 'img/logo.png' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="index.html">Home</a></li>
+                                        <li><a href="about.html">Create Blog</a></li>
+                                        <li><a href="track.html">Contact</a></li>
+                                        <li><a href="#">Proﬁle </a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class=" d-none d-lg-block">
+                            <div>
+
+                                <ul class="text-center">
+                                    {% if user.is_authenticated == False %}
+                                    <li><a href="{%url 'accounts:login'%}" class="genric-btn info-border mr-3">Enter</a><a href="{%url 'accounts:register'%}" class="genric-btn warning-border">Registrate</a></li>
+                                    {% else %}
+                                       <li><p>Текущий пользователь: {{user.get_username}}<a href="{%url 'accounts:logout'%}" class="genric-btn danger-border m-2" >Logout</a></p></li>
+                                    {% endif %}
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+</header>
+<!-- header-end -->

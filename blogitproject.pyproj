@@ -35,6 +35,9 @@
     <Compile Include="accounts\migrations\__init__.py" />
     <Compile Include="accounts\models.py" />
     <Compile Include="accounts\tests.py" />
+    <Compile Include="accounts\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="accounts\views.py" />
     <Compile Include="accounts\__init__.py" />
     <Compile Include="blogs\admin.py" />
@@ -411,7 +414,12 @@
     <Content Include="pages\static\js\vendor\modernizr-3.5.0.min.js" />
     <Content Include="pages\static\js\waypoints.min.js" />
     <Content Include="pages\static\js\wow.min.js" />
+    <Content Include="templates\accounts\login.html" />
+    <Content Include="templates\accounts\register.html" />
+    <Content Include="templates\base.html" />
     <Content Include="templates\pages\index.html" />
+    <Content Include="templates\partitions\_footer.html" />
+    <Content Include="templates\partitions\_header.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="accounts\" />
@@ -469,6 +477,8 @@
     <Folder Include="pages\migrations\" />
     <Folder Include="profiles\" />
     <Folder Include="profiles\migrations\" />
+    <Folder Include="templates\accounts\" />
+    <Folder Include="templates\partitions\" />
     <Folder Include="templates\pages\" />
   </ItemGroup>
   <ItemGroup>
