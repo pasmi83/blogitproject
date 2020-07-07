@@ -39,9 +39,9 @@ def register(request):
                     first_name=first_name,
                     last_name=last_name
                 )
-                profile = Profile()
-                profile.user = user
-                profile.save()
+                #profile = Profile() #функционал вынесен в profile.models
+                #profile.user = user
+                #profile.save()
                 auth.login(request, user)
                 
                 return redirect('pages:index')
