@@ -81,6 +81,7 @@
     <Compile Include="profiles\migrations\__init__.py" />
     <Compile Include="profiles\models.py" />
     <Compile Include="profiles\tests.py" />
+    <Compile Include="profiles\urls.py" />
     <Compile Include="profiles\views.py" />
     <Compile Include="profiles\__init__.py" />
   </ItemGroup>
@@ -420,6 +421,7 @@
     <Content Include="templates\pages\index.html" />
     <Content Include="templates\partitions\_footer.html" />
     <Content Include="templates\partitions\_header.html" />
+    <Content Include="templates\profiles\profile.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="accounts\" />
@@ -478,6 +480,7 @@
     <Folder Include="profiles\" />
     <Folder Include="profiles\migrations\" />
     <Folder Include="templates\accounts\" />
+    <Folder Include="templates\profiles\" />
     <Folder Include="templates\partitions\" />
     <Folder Include="templates\pages\" />
   </ItemGroup>
