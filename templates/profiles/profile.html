@@ -1,17 +1,72 @@
-{%extends 'base.html'%}
-{%load static%}
-{%block content%}
-<!-- bradcam_area  -->
-    <div class="bradcam_area breadcam_bg_2">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="bradcam_text text-center">
-                        <h3>register</h3>
-                    </div>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} | Profile {{user.username}} {% endblock title %}
+{% block content %}
+    <!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_2">
+    <div class="container">
+        <div class="row">
+           <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>{{user.username}}'s Profile</h3>
                 </div>
             </div>
         </div>
     </div>
+</div>
     <!--/ bradcam_area  -->
-{%endblock%}
+
+<div class="whole-wrap">
+    <div class="container box_1170">
+    <div class="section-top-border">
+        <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+        <div class="media">
+            <img src="{{profile.profile_image.url}}" class="mr-3" alt="..." width="128px;" height="128px;">
+            <div class="media-body">
+                    <h5 class="card-title">{%if profile.user.username%}{{profile.user.username}}{%endif%}</h5>
+                    <p class="card-text"><span class="text-success">Firstname: </span>{%if profile.user.first_name%} {{profile.user.first_name}}{%endif%}</p>
+                    <p class="card-text"><span class="text-success">Lastname: </span>{%if profile.user.last_name%} {{profile.user.last_name}}{%endif%}</p>
+                    <p class="card-text"><span class="text-success">Email: </span>{%if profile.user.email%} {{profile.user.email}}{%endif%}</p>
+                    <p class="card-text"><span class="text-success">Status: </span>{%if profile.status%} {{profile.status}}{%endif%}</p>
+                    <p class="card-text"><span class="text-success">About: </span>{%if profile.about%} {{profile.about}}{%endif%}</p>
+                    <p class="card-text"><span class="text-success">Date Joined: </span>{%if profile.user.date_joined%} {{profile.user.date_joined}}{%endif%}</p>
+                    {% if user.username == profile.user.username %}
+                      <a href="{% url 'profiles:user_profile_edit_page' username=profile.user.username %}" class="genric-btn primary mt-3 btn-block">Edit</a>
+                  {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="col-3"></div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-lg-2 col-md-2"></div>
+            <div class="col-lg-8 col-md-8">
+                <h3 class="mb-30 text-center">{{profile.user.username}}'s profile</h3>
+                <div class="card mb-3">
+                    
+                        <img src="{{profile.profile_image.url}}" class="card-img" alt="..." width="100px">
+                      
+                      
+                        <div class="card-body">
+                          <h5 class="card-title">{{profile.user.username}}</h5>
+                          <p class="card-text"><span class="text-success">Firstname: </span>{{profile.user.first_name}}</p>
+                          <p class="card-text"><span class="text-success">Lastname: </span>{{profile.user.last_name}}</p>
+                          <p class="card-text"><span class="text-success">Email: </span>{{profile.user.email}}</p>
+                          <p class="card-text"><span class="text-success">Status: </span>{{profile.status}}</p>
+                          <p class="card-text"><span class="text-success">About: </span>{{profile.about}}</p>
+                          <p class="card-text"><span class="text-success">Date Joined: </span>{{profile.user.date_joined}}</p>
+                          {% if user.username == profile.user.username %}
+                            <a href="{% url 'profiles:user_profile_edit_page' profile.user.username %}" class="genric-btn primary btn-block mt-3">Edit</a>
+                        {% endif %}
+                        </div>
+                      
+                  </div>
+            </div>
+            <div class="col-lg-2 col-md-2"></div>
+        </div> -->
+    </div>
+</div>
+</div>
+{% endblock content %}

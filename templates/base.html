@@ -34,10 +34,10 @@
         <![endif]-->
 
     {%include 'partitions\_header.html'%}
-
+    <!--{%include 'partitions\_alerts.html'%}-->
     {%block content%}
     {%endblock content%}
-
+    
     
     {%include 'partitions/_footer.html'%}
     <!-- JS here -->
@@ -83,5 +83,12 @@
 
         });
     </script>
+    <script type="text/javascript"> 
+        function closeAlert() { 
+          setTimeout(function(){ $(".alert").alert('close'); }, 8000); 
+        } 
+        closeAlert();
+    </script>
+
 </body>
 </html>

@@ -82,12 +82,16 @@
     <Compile Include="profiles\models.py" />
     <Compile Include="profiles\tests.py" />
     <Compile Include="profiles\urls.py" />
+    <Compile Include="profiles\utils.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="profiles\views.py" />
     <Compile Include="profiles\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="comments\templates\comments\index.html" />
     <Content Include="likes\templates\likes\index.html" />
+    <Content Include="media\default\default_profile_image.png" />
     <Content Include="requirements.txt" />
     <Content Include="pages\static\admin\css\autocomplete.css" />
     <Content Include="pages\static\admin\css\base.css" />
@@ -421,7 +425,9 @@
     <Content Include="templates\pages\index.html" />
     <Content Include="templates\partitions\_footer.html" />
     <Content Include="templates\partitions\_header.html" />
+    <Content Include="templates\partitions\_alerts.html" />
     <Content Include="templates\profiles\profile.html" />
+    <Content Include="templates\profiles\profile_edit.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="accounts\" />
@@ -439,6 +445,7 @@
     <Folder Include="likes\templates\" />
     <Folder Include="likes\templates\likes\" />
     <Folder Include="media\" />
+    <Folder Include="media\default\" />
     <Folder Include="pages\static\" />
     <Folder Include="pages\static\admin\" />
     <Folder Include="pages\static\admin\css\" />

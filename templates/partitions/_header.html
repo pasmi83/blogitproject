@@ -1,7 +1,7 @@
 {%load static%}
 <!-- header-start -->
 <header>
-    <div class="header-area ">
+    <div class="header-area">
         <div id="sticky-header" class="main-header-area">
             <div class="container-fluid">
                 <div class="header_bottom_border">
@@ -20,7 +20,9 @@
                                         <li><a class="active" href="index.html">Home</a></li>
                                         <li><a href="about.html">Create Blog</a></li>
                                         <li><a href="track.html">Contact</a></li>
-                                        <li><a href="#">Proﬁle </a></li>
+                                        {%if user.username%}
+                                        <li><a href="{%url 'profiles:user_profile_page' username=user.username%}">Proﬁle </a></li>
+                                        {%endif%}
                                         <li><a href="contact.html">Contact</a></li>
                                     </ul>
                                 </nav>
@@ -42,6 +44,7 @@
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
+                        {%include 'partitions\_alerts.html'%}
                     </div>
                 </div>
 
