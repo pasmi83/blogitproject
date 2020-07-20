@@ -13,20 +13,22 @@ class Profile(models.Model):
                                      default='default/default_profile_image.png',
                                     verbose_name='Profile Image',
                                    blank=True)
-    profile_image_thumbnail = models.ImageField(upload_to='profile_image_thumbnail/%Y/%m/%d', blank=True, verbose_name='Profile Image Thumbnail')
+    profile_image_thumbnail = models.ImageField(upload_to='profile_image_thumbnail/%Y/%m/%d', 
+                                                blank=True, verbose_name='Profile Image Thumbnail')
    
     def __str__(self):
         return self.user.get_full_name()
 
-#    def delete(self, *args, **kwargs):
- #       if self.profile_image.name.split('/')[-1] != 'default_profile_image.png':
-  #          self.profile_image.delete(save=False)
-   #         self.profile_image_thumbnail.delete(save=False)
-    #    super().delete(*args, **kwargs)
+    def delete(self, *args, **kwargs):
+        if self.profile_image.name.split('/')[-1] != 'default_profile_image.png':
+            self.profile_image.delete(save=False)
+            self.profile_image_thumbnail.delete(save=False)
+        super().delete(*args, **kwargs)
     
-    #def save(self, *args, **kwargs):
-    #    self.profile_image_thumbnail = generate_profile_thumbnail(self.id, self.profile_image.name, 200, 200)
-    #    super(Profile, self).save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        self.profile_image_thumbnail = generate_profile_thumbnail(self.id,
+                                                                 self.profile_image, 200, 200)
+        super(Profile, self).save(*args, **kwargs)
 
     
     
