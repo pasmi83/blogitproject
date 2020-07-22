@@ -1,4 +1,4 @@
-from django.db import models
+"""from django.db import models
 
 class Rubric(models.Model):
     name = models.CharField(max_length = 20, db_index = True, unique = True, verbose_name = 'Название')
@@ -24,7 +24,13 @@ class SuperRubric(Rubric):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length = 40, verbose_name = 'Тема поста')
-    rubric = models.ForeignKey(SubRubric, on_delete = models.PROTECT, verbose_name = 'Рубрика')
-    author = models.ForeignKey(User, on_delete = models.CASCADE, verbose_name = 'Автор объявления')
-    is_active = models.BooleanField(default = True, db_index = True, verbose_name = 'Отображается или нет')
+    title = models.CharField(max_length = 40, 
+                             verbose_name = 'Тема поста')
+    rubric = models.ForeignKey(SubRubric, on_delete = models.PROTECT,
+                              verbose_name = 'Рубрика')
+    author = models.ForeignKey(User, on_delete = models.CASCADE, 
+                               verbose_name = 'Автор объявления')
+    is_active = models.BooleanField(default = True, db_index = True,
+                                   verbose_name = 'Отображается или нет')
+    main_image = models.ImageField(blank  =True, upload_to = get_timestamp_path,
+                                  verbose_name='Заглавное изображение')"""

@@ -3,8 +3,9 @@
 *.pyc
 __pycache__/
 local_settings.py
-/blogitproject/media/*
-/blogitproject/static/*
+/*/media/
+/*/static/
+/media/
 /blogit_venv
 .DS_Store
 .vscode
