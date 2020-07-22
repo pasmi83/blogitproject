@@ -34,20 +34,11 @@ def register(request):
         password = request.POST['password']
         password1 = request.POST['password1']
         if password == password1:
+
             try:
-                user = User.objects.create_user(
-                    username=username,
-                    password=password,
-                    email=email,
-                    first_name=first_name,
-                    last_name=last_name
-                )
-                #profile = Profile() #функционал вынесен в profile.models
-                #profile.user = user
-                #profile.save()
-                
-                
-                #return redirect('pages:index')
+                user = User.objects.create_user(username=username, password=password,
+                                                email=email, first_name=first_name,
+                                                last_name=last_name)
             except:
                 messages.error(request, 'Somthing going wrong... Please, try again...')
                 return render(request, 'accounts/register.html', context=context)
@@ -57,9 +48,7 @@ def register(request):
                 return redirect('pages:index')
         else:
             messages.error(request, 'Password and Confirm Password is not match... Please,try again')
-            return render(request, 'accounts/register.html', context=context)
-
-                
+            return render(request, 'accounts/register.html', context=context)               
 
 
 
