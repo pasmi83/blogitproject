@@ -3,9 +3,9 @@
 *.pyc
 __pycache__/
 local_settings.py
-/*/media/
-/*/static/
-/media/
+/*/media
+/*/static
+/media
 /blogit_venv
 .DS_Store
 .vscode
