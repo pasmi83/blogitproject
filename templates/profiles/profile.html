@@ -23,7 +23,7 @@
         <div class="col-3"></div>
         <div class="col-6">
         <div class="media">
-            <img src="{{profile.profile_image.url}}" class="mr-3" alt="..." width="128px;" height="128px;">
+            <img src="{{profile.profile_image_thumbnail.url}}" class="mr-3" alt="..." width="128px;">
             <div class="media-body">
                     <h5 class="card-title">{%if profile.user.username%}{{profile.user.username}}{%endif%}</h5>
                     <p class="card-text"><span class="text-success">Firstname: </span>{%if profile.user.first_name%} {{profile.user.first_name}}{%endif%}</p>

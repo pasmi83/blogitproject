@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'blogs',
     'profiles',
     'likes',
-    
+    'django_cleanup',
 ]
 
 # Middleware framework

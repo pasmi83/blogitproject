@@ -34,7 +34,10 @@ def register(request):
         password = request.POST['password']
         password1 = request.POST['password1']
         if password == password1:
-
+            """user = User.objects.create_user(username=username, password=password,
+                                                email=email, first_name=first_name,
+                                                last_name=last_name)
+            return redirect"""
             try:
                 user = User.objects.create_user(username=username, password=password,
                                                 email=email, first_name=first_name,

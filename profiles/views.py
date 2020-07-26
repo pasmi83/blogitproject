@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from profiles.models import Profile
 from django.contrib.auth.models import User
 from django.contrib import messages #сообщения
+from . import urls
 
 # Create your views here.
 @login_required
@@ -10,7 +11,10 @@ def user_profile_page(request,username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user = user)
     context = {'profile':profile}
+    #for v in urls.urlpatterns:
+        #print (f'!!!! {} !!!')
     return render(request,'profiles/profile.html',context=context)
+    
 
 @login_required
 def user_profile_edit_page(request,username):
