@@ -45,6 +45,9 @@
     <Compile Include="blogs\migrations\__init__.py" />
     <Compile Include="blogs\models.py" />
     <Compile Include="blogs\tests.py" />
+    <Compile Include="blogs\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="blogs\views.py" />
     <Compile Include="blogs\__init__.py" />
     <Compile Include="comments\admin.py" />
@@ -422,6 +425,7 @@
     <Content Include="templates\accounts\login.html" />
     <Content Include="templates\accounts\register.html" />
     <Content Include="templates\base.html" />
+    <Content Include="templates\blogs\blog.html" />
     <Content Include="templates\pages\index.html" />
     <Content Include="templates\partitions\_footer.html" />
     <Content Include="templates\partitions\_header.html" />
@@ -487,6 +491,7 @@
     <Folder Include="profiles\" />
     <Folder Include="profiles\migrations\" />
     <Folder Include="templates\accounts\" />
+    <Folder Include="templates\blogs\" />
     <Folder Include="templates\profiles\" />
     <Folder Include="templates\partitions\" />
     <Folder Include="templates\pages\" />

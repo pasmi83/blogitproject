@@ -37,8 +37,8 @@
     <!--{%include 'partitions\_alerts.html'%}-->
     {%block content%}
     {%endblock content%}
-    
-    
+
+
     {%include 'partitions/_footer.html'%}
     <!-- JS here -->
     <script src="{%static 'js/vendor/modernizr-3.5.0.min.js'%}"></script>
@@ -83,12 +83,48 @@
 
         });
     </script>
-    <script type="text/javascript"> 
-        function closeAlert() { 
-          setTimeout(function(){ $(".alert").alert('close'); }, 8000); 
-        } 
+    <script type="text/javascript">
+        function closeAlert() {
+          setTimeout(function(){ $(".alert").alert('close'); }, 8000);
+        }
         closeAlert();
     </script>
+    <!--
+    <script type="text/javascript">
+        function addOrRemoveLike(blogId) {
+            $.ajax({
+                type: "POST",
+                url: "{% url 'blogs:add_or_remove_like_ajax'%}",
+                data: {blog_id : blog_id, csrfmiddlewaretoken: "{{csrf_token}}"},
+                success: function(data){
+                    alert('Everything working in data')
+                }},
+
+            });
+        };
+    </script>
+        -->
+<script type="text/javascript">
+    function addOrRemoveLike(blogId) {
+    
+            $.ajax({
+                type: "POST",
+                url: "{% url 'blogs:add_or_remove_like_ajax'%}",
+                data: {blog_id : blogId, csrfmiddlewaretoken: "{{csrf_token}}"},
+                success: function(data) {
+                    document.getElementById("like").style.fontSize = data.font;
+                    document.getElementById("like").className = data.class;
+                    document.getElementById("like").style.color = data.color;
+                    document.getElementById("liLike").innerHTML = data.likes+" likes";
+                    
+                    }
+    });
+    };
+    
+    
+</script>
+
+
 
 </body>
 </html>
