@@ -4,6 +4,7 @@
     <Name>blogitproject</Name>
     <RootNamespace>blogitproject</RootNamespace>
     <InterpreterId>MSBuild|blogit_env|$(MSBuildProjectFullPath)</InterpreterId>
+    <SuppressConfigureTestFrameworkPrompt>true</SuppressConfigureTestFrameworkPrompt>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
