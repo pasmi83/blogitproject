@@ -2,6 +2,10 @@ from django.db import models
 from profiles.models import Profile
 from comments.models import Comment
 from django.contrib.postgres.fields import ArrayField
+from taggit.managers import TaggableManager
+
+
+
 
 class Blog(models.Model):
     title = models.CharField(max_length=250, blank=False, default = 'Without title.')
@@ -13,6 +17,8 @@ class Blog(models.Model):
     updated_at = models.DateTimeField(auto_now = True)
     comments = models.ManyToManyField(Comment, blank = True)
     likes =  ArrayField(models.CharField(max_length = 30, blank = True, default = list))
+    tags = TaggableManager(blank=True,)
+   
 
     def save(self, *args, **kwargs):
         self.text_slug = self.text[:197]+'...'

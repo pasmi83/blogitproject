@@ -114,6 +114,7 @@
                 success: function(data) {
                     document.getElementById("like").style.fontSize = data.font;
                     document.getElementById("like").className = data.class;
+                    document.getElementById("like").classList.add("transition");
                     document.getElementById("like").style.color = data.color;
                     document.getElementById("liLike").innerHTML = data.likes+" likes";
                     
@@ -123,7 +124,12 @@
     
     
 </script>
-
+<script type="text/javascript">
+    function slimHeader() {
+        setTimeout(function(){ document.querySelector(".bradcam_area").classList.add("__slim","transition"); }, 1000);
+     }
+    slimHeader();
+</script>
 
 
 </body>

@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+{%load static%}
+
+{%block content%}
+<!-- bradcam_area  -->
+<div class="bradcam_area breadcam_bg_2">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="bradcam_text text-center">
+                    <h3>creation of {{user.username}}'s blog</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/ bradcam_area  -->
+<div class="container box_1170">
+    <div class="section-top-border">
+        <div class="row">
+            <form action="{% url 'blogs:create_blog'%}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mt-3">
+                    <input type="text" name="title" placeholder="Title of blog" class="single-input">
+                </div>
+                <div class="mt-3">
+                    <textarea name="text" class="single-textarea" placeholder="Text tof blog"></textarea>
+                </div>
+                <div class="mt-3">
+                    <input type="file" name="image" class="single-input">
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="tags" placeholder="Tags" class="single-input">
+                </div>
+                <div class="mt-10">
+                    <div class="align-items-center">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="genric-btn primary btn-block">Save</button>
+                            </div>
+                            <div class="col-6">
+                                <a href="{%url "pages:index"%}" class="genric-btn danger btn-block">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock content%}

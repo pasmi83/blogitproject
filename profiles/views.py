@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from profiles.models import Profile
+from blogs.models import Blog
 from django.contrib.auth.models import User
 from django.contrib import messages #сообщения
 from . import urls
@@ -10,9 +11,13 @@ from . import urls
 def user_profile_page(request,username):
     user = User.objects.get(username=username)
     profile = Profile.objects.get(user = user)
-    context = {'profile':profile}
+    blogs = Blog.objects.filter(author=profile).order_by('-created_at')
+    context = {'profile':profile,'blogs':blogs}
+
+    
     #for v in urls.urlpatterns:
         #print (f'!!!! {} !!!')
+    
     return render(request,'profiles/profile.html',context=context)
     
 
@@ -42,7 +47,7 @@ def user_profile_edit_page(request,username):
             if any(request.FILES):
                 profile.profile_image = request.FILES['profile_image']
         except:
-            messages.error(reguest,'Profile Image is not correct!')
+            messages.error(request,'Profile Image is not correct!')
             return render(request,'profiles/profile_edit.html',context = context)
         profile.save()
         messages.success(request, 'Profile successfuly changed!')
