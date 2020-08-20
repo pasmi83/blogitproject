@@ -96,7 +96,14 @@ def edit_blog(request,blog_id):
             return render(request,  'blogs/edit_blog.html',context = context )
         
         if request.method =="POST":
-       
+            #удаление
+            delete = request.POST.get('delete','')
+            if delete and delete =='yes':
+                if blog.author == request.user.profile:
+                    blog.delete()
+                    return redirect('/profile/{}'.format(request.user.username))
+                                        #---------------------------------------------
+
             blog.title=request.POST['title']
             blog.text=request.POST['text']
             

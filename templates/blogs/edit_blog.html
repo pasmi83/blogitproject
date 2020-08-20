@@ -15,9 +15,9 @@
     </div>
 </div>
 <!--/ bradcam_area  -->
-<div class="container box_1170">
+<div class="container">
     <div class="section-top-border">
-        <div class="row">
+        <div class="col-12">
             <form action="{% url 'blogs:edit_blog' blog_id=blog.id%}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="mt-10">
@@ -34,17 +34,24 @@
                 </div>
                 <div class="mt-10">
                     <div class="align-items-center">
-                        <div class="row">
+                        <div class="row justify-content-md-center">
                             <div class="col-6">
                                 <button type="submit" class="genric-btn primary btn-block">Save</button>
                             </div>
                             <div class="col-6">
                                 <a href="{%url "blogs:blog" blog_id=blog.id%}" class="genric-btn danger btn-block">Cancel</a>
                             </div>
+                            
                         </div>
-                    </div>
+                    
                 </div>
             </form>
+            <form action="{%url 'blogs:edit_blog' blog_id=blog.id%}" method="post">
+                                {% csrf_token %}
+                                <input hidden name="delete" value="yes">
+                            <button type="submit" class="genric-btn danger btn-block mt-5 col-2">DELETE</button>
+            </form>
+            </div>
         </div>
     </div>
 </div>
