@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'profiles',
     'likes',
     'django_cleanup',
+    'taggit',
+    'easy_thumbnails',
 ]
 
 # Middleware framework
@@ -150,3 +152,5 @@ MESSAGE_TAGS = {
 messages.INFO: 'success',
 messages.ERROR: 'danger'
 }
+
+TAGGIT_CASE_INSENSITIVE = True

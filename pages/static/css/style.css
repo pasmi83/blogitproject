@@ -3154,33 +3154,41 @@ h3 {
 
 /* line 13, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_bradcam.scss */
 .bradcam_area {
-  background-size: cover;
-  background-position: center center;
-  padding: 250px 0 178px 0;
-  background-repeat: no-repeat;
-  position: relative;
-  z-index: 0;
+    background-size: cover;
+    background-position: center center;
+    padding: 250px 0 178px 0;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
 }
-
-/* line 20, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_bradcam.scss */
+.transition {
+    transition: 2s;
+}
+.__slim {
+    height: 10vw;
+    padding: 5vw 2vw;
+    background-position: unset;
+}
+    /* line 20, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_bradcam.scss */
 .bradcam_area::before {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.4+0,1+100 */
-  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.4) 0%, black 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.4) 0%, black 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, black 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#000000',GradientType=1 );
-  /* IE6-9 */
-  z-index: -1;
-  content: '';
-}
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&1+0,0.4+0,1+100 */
+        background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.4) 0%, black 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.4) 0%, black 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.4) 0%, black 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#000000',GradientType=1 );
+        /* IE6-9 */
+        z-index: -1;
+        content: '';
+ }
+
 
 @media (max-width: 767px) {
   /* line 13, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_bradcam.scss */
@@ -6207,6 +6215,15 @@ h6 {
   font-size: 14px;
 }
 
+.blog-edit-link {
+    text-align: center;
+    vertical-align: middle;
+    
+    font-size: 16px;
+    background-color: rgba(52, 246, 14, 0.73);
+    border-radius: 3px;
+    width: 4em;
+}
 
 /* line 567, ../../Arafath/CL/Cl November/221. Music/HTML/scss/_blog.scss */
 .blog-info-link li a {

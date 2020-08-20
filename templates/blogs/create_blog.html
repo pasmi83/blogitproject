@@ -1,5 +1,6 @@
 {%extends 'base.html'%}
 {%load static%}
+
 {%block content%}
 <!-- bradcam_area  -->
 <div class="bradcam_area breadcam_bg_2">
@@ -7,47 +8,44 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="bradcam_text text-center">
-                    <h3>Create blog</h3>
+                    <h3>creation of {{user.username}}'s blog</h3>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<!-- create_blog_area  -->
-
-<section class="blog_area section-padding">
-    <div class="container">
+<!--/ bradcam_area  -->
+<div class="container box_1170">
+    <div class="section-top-border">
         <div class="row">
-            <div class="col-lg-8 mb-5 mb-lg-0">
-                <div class="blog_left_sidebar">
-                    <form class="container-fluid m-5" method="POST">
-                        {% csrf_token %}
-                        
-            
-                            <label class="col-form-label">Заголовок</label>
-                            <input type="text"  class="single-input m-2" name="title" required>
-
-                            <label class="col-form-label">Текст</label>
-                            <textarea class="single-textarea m-2" name="text" required></textarea>
-
-                            <label class="col-form-label">Головная картинка</label>
-                            <input type="file" name="image" class="single-input">
-                        
-                           
-
-                            <input type="submit" value="Создать" class="genric-btn info-border mt-5 col-12">
-                            <div class="text-center m-2">
-                                <span>ИЛИ</span>
-                            </div>
-                            <a href="{%url 'pages:index'%}" class="genric-btn warning-border col-12">Отказаться</a>
-                        </div>
-                    </form>
+            <form action="{% url 'blogs:create_blog'%}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mt-3">
+                    <input type="text" name="title" placeholder="Title of blog" class="single-input">
                 </div>
-            </div>
+                <div class="mt-3">
+                    <textarea name="text" class="single-textarea" placeholder="Text tof blog"></textarea>
+                </div>
+                <div class="mt-3">
+                    <input type="file" name="image" class="single-input">
+                </div>
+                <div class="mt-3">
+                    <input type="text" name="tags" placeholder="Tags" class="single-input">
+                </div>
+                <div class="mt-10">
+                    <div class="align-items-center">
+                        <div class="row">
+                            <div class="col-6">
+                                <button type="submit" class="genric-btn primary btn-block">Save</button>
+                            </div>
+                            <div class="col-6">
+                                <a href="{%url "pages:index"%}" class="genric-btn danger btn-block">Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</section>
-
-    
+</div>
 {%endblock content%}

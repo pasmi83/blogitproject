@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{%load thumbnail%}
+
 {% load static %}
 {% block title %} | Profile {{user.username}} {% endblock title %}
 {% block content %}
@@ -69,4 +71,36 @@
     </div>
 </div>
 </div>
+{%if blogs%}
+<div class="album py-5 bg-light">
+<div class="container">
+
+          <div class="row">
+            {%for blog in blogs%}
+            <div class="card-deck col-md-4">
+            
+              
+              <div class="card mb-4 box-shadow">
+              {%if blog.image%}
+                  {%thumbnail blog.image 225x225 crop as thumb225%}
+                <a href="{{blog.image.url}}" target="_blank"><img class="card-img-top" data-src="{{thumb225.url}}" alt="{{blog.title}}" style="height: 225px; width: 100%; display: block;" src="{{thumb225.url}}" data-holder-rendered="true"></a>
+              {%endif%}
+              <div class="card-body">
+                  <p class="card-text">{{blog.title}}{%if blog.text|length > 200 %}{{blog.text|slice:":200"}}...{%else%}{{blog.text}}{%endif%}</p>
+                  <div class="d-flex justify-content-between bottom">
+                    <div class="btn-group">
+                      <a href="{%url "blogs:blog" blog_id=blog.id%}" class="btn btn-sm btn-outline-secondary">View</a>
+                      <a href="{%url "blogs:edit_blog" blog_id=blog.id%}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                    </div>
+                    <small class="text-muted">{{blog.created_at|date:"d.m.y"}}</small>
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+           {%endfor%}
+        </div>
+    </div>
+</div>
+{%endif%}
 {% endblock content %}
