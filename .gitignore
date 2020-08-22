@@ -12,4 +12,5 @@ local_settings.py
 *.pid
 *.db
 *.rdb
-*.sqlite3
+*.sqlite3
+/blogitproject/secret_key.py
