@@ -41,6 +41,9 @@
     </Compile>
     <Compile Include="accounts\views.py" />
     <Compile Include="accounts\__init__.py" />
+    <Compile Include="blogitproject\secret_key.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="blogs\admin.py" />
     <Compile Include="blogs\apps.py" />
     <Compile Include="blogs\migrations\__init__.py" />
@@ -58,6 +61,16 @@
     <Compile Include="comments\tests.py" />
     <Compile Include="comments\views.py" />
     <Compile Include="comments\__init__.py" />
+    <Compile Include="leads\admin.py" />
+    <Compile Include="leads\apps.py" />
+    <Compile Include="leads\forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="leads\models.py" />
+    <Compile Include="leads\tests.py" />
+    <Compile Include="leads\urls.py" />
+    <Compile Include="leads\views.py" />
+    <Compile Include="leads\__init__.py" />
     <Compile Include="likes\admin.py" />
     <Compile Include="likes\apps.py" />
     <Compile Include="likes\migrations\__init__.py" />
@@ -432,6 +445,7 @@
     <Content Include="templates\blogs\blog.html" />
     <Content Include="templates\blogs\edit_blog.html" />
     <Content Include="templates\blogs\create_blog.html" />
+    <Content Include="templates\leads\contact.html" />
     <Content Include="templates\pages\index.html" />
     <Content Include="templates\partitions\_footer.html" />
     <Content Include="templates\partitions\_header.html" />
@@ -452,6 +466,7 @@
     <Folder Include="comments\migrations\" />
     <Folder Include="comments\templates\" />
     <Folder Include="comments\templates\comments\" />
+    <Folder Include="leads\" />
     <Folder Include="likes\" />
     <Folder Include="likes\migrations\" />
     <Folder Include="likes\templates\" />
@@ -500,6 +515,7 @@
     <Folder Include="profiles\migrations\" />
     <Folder Include="templates\accounts\" />
     <Folder Include="templates\blogs\" />
+    <Folder Include="templates\leads\" />
     <Folder Include="templates\profiles\" />
     <Folder Include="templates\partitions\" />
     <Folder Include="templates\pages\" />
