@@ -30,5 +30,5 @@ urlpatterns = [
     path('blog/',include('blogs.urls',namespace = 'blogs')),
     path('accounts/',include('accounts.urls', namespace = 'accounts')),
     path('profile/', include('profiles.urls', namespace = 'profiles')),
-    path('leads/',include('leads.urls', namespace = 'leads')),
+    path('contact/',include('leads.urls', namespace = 'contact')),
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

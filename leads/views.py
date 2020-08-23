@@ -35,3 +35,30 @@ def contact_page(request):
         'form': form
     }
     return render(request, 'leads/contact.html', context=context)
+
+@staff_member_required
+def send_answer(request, lead_id):
+    try:
+        lead = Lead.objects.get(id=str(lead_id))
+    except:
+        return redirect('/admin/leads/lead/')
+
+    if request.is_ajax():
+        answer = request.POST.get('answer', '')
+        user = request.user
+        answer_status = False
+        if not lead.is_email_answer_send and answer:
+            lead.answer = answer
+            lead.answered_by = user
+            lead.is_email_answer_send = True
+            lead.save()
+            send_mail(
+                subject='Ответ на ' + lead.subject,
+                message='Добрый день, {0}!\n{1}'.format(lead.name, lead.answer),
+                from_email=EMAIL_HOST_USER,
+                recipient_list=[lead.email],
+                fail_silently=False,
+            )
+            answer_status = True
+
+        return HttpResponse(json.dumps({'answer_status': answer_status}), content_type='application/json')

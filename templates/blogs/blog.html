@@ -3,7 +3,7 @@
 {%block content%}
 
 <!-- bradcam_area  -->
-<div class="bradcam_area __slim breadcam_bg_2">
+<div class="bradcam_area breadcam_bg_2">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -42,7 +42,7 @@
                             </div>
                             <p>{{blog.text|linebreaks}}</p>
                             <ul class="blog-info-link">
-                                <li onclick="addOrRemoveLike({{blog.id}})" style="cursor:pointer;" >
+                                <li onclick="addOrRemoveLike({{blog.id}})(jQuery.noConflict(true))" style="cursor:pointer;" >
                                 <i class="{{like_class}}" id="like" style="color:{{like_color}};font-size:{{font_size}}"></i>
                                 <span id="liLike">{{blog.likes|length}} likes</span></li>
                                 <li><a href="#">

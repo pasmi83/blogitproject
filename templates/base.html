@@ -85,7 +85,7 @@
     </script>
     <script type="text/javascript">
         function closeAlert() {
-          setTimeout(function(){ $(".alert").alert('close'); }, 8000);
+          setTimeout(function(){ $(".alert").alert('close'); }, 5000);
         }
         closeAlert();
     </script>
@@ -128,7 +128,7 @@
     function slimHeader() {
         setTimeout(function(){ document.querySelector(".bradcam_area").classList.add("__slim","transition"); }, 1000);
      }
-    slimHeader();
+    slimHeader();//(jQuery.noConflict(true)) добавил в надежде на снятие конфликтов
 </script>
 
 

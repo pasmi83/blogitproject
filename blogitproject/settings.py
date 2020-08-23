@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+
     'accounts',
     'comments',
     'pages',
@@ -47,9 +49,12 @@ INSTALLED_APPS = [
     'profiles',
     'likes',
     'leads',
+
+
     'django_cleanup',
     'taggit',
     'easy_thumbnails',
+    'widget_tweaks',
 ]
 
 # Middleware framework
