@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.db.models.signals import post_save
 from django.dispatch import receiver
-# from django.conf import settings
+from django.conf import settings
 from blogitproject.settings import EMAIL_HOST_USER
 
 class Lead(models.Model):
@@ -19,7 +19,7 @@ class Lead(models.Model):
     notice = models.TextField(blank=True, default='')
      
     def __str__(self):
-        return f'{self.mail} {self.subject} ({self.id})'
+        return self.email + ' ' + self.subject + ' (' + str(self.id) + ')'
         
 @receiver(post_save, sender=Lead)
 def create_user_profile(sender, instance, created, *args, **kwargs):

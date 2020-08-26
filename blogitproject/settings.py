@@ -40,21 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-
     'accounts',
     'comments',
     'pages',
     'blogs',
     'profiles',
     'likes',
-    'leads',
-
-
     'django_cleanup',
     'taggit',
     'easy_thumbnails',
     'widget_tweaks',
+    'leads',
 ]
 
 # Middleware framework
