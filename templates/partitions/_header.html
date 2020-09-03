@@ -19,7 +19,7 @@
                                     <ul id="navigation">
                                         <li><a class="active" href="{%url 'pages:index'%}">Home</a></li>
                                         <li><a href="{%url 'blogs:create_blog'%}">Create Blog</a></li>
-                                        <li><a href="#">Contact</a></li>
+                                        <li><a href="{%url 'leads:contact_page'%}">Contact</a></li>
                                         {%if user.username%}
                                         <li><a href="{%url 'profiles:user_profile_page' username=user.username%}">Proﬁle </a></li>
                                         {%endif%}

@@ -1,0 +1,60 @@
+{% extends 'admin/change_list.html' %}
+{% load i18n %}
+{% load static %}
+{% block object-tools %}
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  </style>
+{% endblock object-tools %}
+{% block result_list %}
+
+<!-- jquery plugins here-->
+<script src="{% static 'js/jquery-1.12.1.min.js' %}"></script>
+
+<!-- Ajax request -->
+<script type="text/javascript">
+  function sendAnswer(leadId) {
+    var answer = $(`#id_form-${leadId}-answer`).val();
+      $.ajax({
+        type:"POST",
+        url: "/contact/send_answer/" + leadId,
+        data:{
+          answer: answer,
+          csrfmiddlewaretoken: "{{csrf_token}}"
+        },
+        success: function(data) {
+           console.log(data.answer_status);
+           if (data.answer_status) {
+            location.reload();
+           } else {
+             alert('NOT GOOD');
+           };
+    }
+  });
+};
+</script>
+{{ block.super }}
+
+{% endblock result_list %}

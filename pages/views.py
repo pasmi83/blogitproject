@@ -22,7 +22,7 @@ def index(request):
     search = request.GET.get('searching','')
     if search:
         blogs = blogs.filter(text__icontains = search)
-    #-------------------------------------------------------------
+    #-------------------------------------------------------------------
     
     #фильтрация по тегам
     tag_cloud = Blog.tags.all()
@@ -39,7 +39,8 @@ def index(request):
     page = paginator.get_page(page_number)
    
     #--------------------------------------------------------------------   
-    
+    print ('!!!!',blogs.model)
+    print ('2!!!',blogs.__class__.__name__)
     context = {
         'blogs':blogs,
         'recent_posts':recent_posts,

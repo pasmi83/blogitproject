@@ -28,7 +28,7 @@
                         <article class="blog_item">
                             <div class="blog_item_img">
                                 {%if blog.image%}
-                                <img class="card-img rounded-0" src="{{blog.image.url}}" alt="">
+                                <img class="card-img rounded-0" loading="lazy" src="{{blog.image.url}}" alt="">
                                 {%endif%}
                                 <a href="{%url "blogs:blog" blog_id=blog.id%}" class="blog_item_date">
                                     <h3>{{blog.created_at|date:"j"}}</h3>

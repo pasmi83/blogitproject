@@ -441,6 +441,7 @@
     <Content Include="pages\static\js\wow.min.js" />
     <Content Include="templates\accounts\login.html" />
     <Content Include="templates\accounts\register.html" />
+    <Content Include="templates\admin\leads\lead\change_list.html" />
     <Content Include="templates\base.html" />
     <Content Include="templates\blogs\blog.html" />
     <Content Include="templates\blogs\edit_blog.html" />
@@ -514,8 +515,11 @@
     <Folder Include="profiles\" />
     <Folder Include="profiles\migrations\" />
     <Folder Include="templates\accounts\" />
+    <Folder Include="templates\admin\leads\" />
+    <Folder Include="templates\admin\leads\lead\" />
     <Folder Include="templates\blogs\" />
     <Folder Include="templates\leads\" />
+    <Folder Include="templates\admin\" />
     <Folder Include="templates\profiles\" />
     <Folder Include="templates\partitions\" />
     <Folder Include="templates\pages\" />
